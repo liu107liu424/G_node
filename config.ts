@@ -8,7 +8,7 @@ export default {
   jwtSecretKey: "itheima No1. ^_^",
   //token有效期
   expiresIn: "20h",
-  Port: 3000, // 启动端口
+  Port: 3001, // 启动端口
   staticDir: path.resolve('./public'), // 静态资源路径
   uploadDir: path.join(__dirname, path.resolve('public/')), // 上传文件路径
   // 数据库连接设置
@@ -17,12 +17,12 @@ export default {
     host: '127.0.0.1',
     user: 'root',
     password: '123liu456',
-    database: 'store'
+    database: 'official'
   },
-  token:(data:{userName:string})=>{
+  token: (data: { userName: string }) => {
     const tokenStr = Jwt.sign(
       data,
-     "itheima No1. ^_^",
+      "itheima No1. ^_^",
       {
         expiresIn: '20h',
       }
